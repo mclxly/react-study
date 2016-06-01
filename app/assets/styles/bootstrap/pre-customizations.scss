@@ -1,0 +1,20 @@
+// Customize Bootstrap variables that get imported before the original Bootstrap variables.
+// Thus original Bootstrap variables can depend on values from here.
+
+$font-family-sans-serif: 'OpenSans-Light', Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*$body-bg: #ee0000;
+
+$brand-primary:         #ee0000;*/
+
+/*
+H1: #545F66 18px
+H2: #89949C 14px
+H3: #545F66 14px
+H4: #C1C7CB 12px
+Line: #D8DDE0 
+Button: 60ADDD
+ */
+$brand-primary:         #60ADDD !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-default-bg:                 $brand-primary !default;

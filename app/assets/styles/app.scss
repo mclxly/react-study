@@ -1,0 +1,10 @@
+/* app.scss */
+
+$section-width: 700px;
+
+@mixin section-mixin {
+  margin: 0 auto;
+  width: $section-width;
+}
+
+$very-light-grey: #D3D3D3;
