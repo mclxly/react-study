@@ -2,12 +2,10 @@
 
 html,
 body {
-  font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   height: 100%;
   width: 100%;
 }
-
-
 
 :global(#app) {
   background-color: #FAFAFA;

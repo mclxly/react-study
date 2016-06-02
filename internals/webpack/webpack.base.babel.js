@@ -22,15 +22,15 @@ module.exports = (options) => ({
       test: /\.css$/,
       exclude: /node_modules/,
       loader: options.cssLoaders,
-    }, { 
+    }, {
       test: /\.scss$/,
       exclude: /node_modules/,
-      loaders: [ 'style', 'css', 'postcss', 'sass' ] 
+      loaders: ['style', 'css', 'postcss', 'sass'],
     }, {
       // Bootstrap 3
       test: /bootstrap-sass\/assets\/javascripts\//,
       loader: 'imports?jQuery=jquery',
-    }, , {
+    }, {
       // Do not transform vendor's CSS with CSS-modules
       // The point is that they remain in global scope.
       // Since we require these CSS files in our JS or CSS files,
@@ -97,6 +97,6 @@ module.exports = (options) => ({
   stats: false, // Don't show stats in the console
   progress: true,
   sassLoader: {
-    includePaths: [path.resolve(__dirname, "../../")]
+    includePaths: [path.resolve(__dirname, '../../')],
   },
 });
