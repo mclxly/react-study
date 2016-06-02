@@ -1,8 +1,8 @@
 // Customize Bootstrap variables that get imported before the original Bootstrap variables.
 // Thus original Bootstrap variables can depend on values from here.
 
-@font-family-sans-serif:  'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
-@font-family-serif:       'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+$font-family-sans-serif:  'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+$font-family-serif:       'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
 
 /*$body-bg: #ee0000;
 
