@@ -40,10 +40,12 @@ function routeReducer(state = routeInitialState, action) {
 /**
  * Creates the main reducer with the asynchronously loaded ones
  */
+import commentsDemoReducer from 'containers/CommentsDemo/reducer';
 export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
     global: globalReducer,
+    commentsDemo: commentsDemoReducer,
     ...asyncReducers,
   });
 }

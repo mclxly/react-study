@@ -1,9 +1,29 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": "1",
+      "author": "木木",
+      "text": "aaabbbcccddd"
+    },
+    {
+      "id": "2",
+      "author": "Jordan Walke",
+      "text": "This is *another* comment"
+    },
+    {
+      "id": 3,
+      "author": "张三",
+      "text": "测试"
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }
