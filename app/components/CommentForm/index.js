@@ -29,23 +29,23 @@ class CommentForm extends React.Component {
     if (!text || !author) {
       return;
     }
-    // TODO: send request to the server
+    this.props.onCommentSubmit({author: author, text: text});
     this.setState({author: '', text: ''});
-  },
+  }
   render() {
     return (
-      <form className="commentForm"  onSubmit={this.handleSubmit}>
+      <form className="commentForm"  onSubmit={this.handleSubmit.bind(this)}>
         <input
           type="text"
           placeholder="Your name"
           value={this.state.author}
-          onChange={this.handleAuthorChange}
+          onChange={this.handleAuthorChange.bind(this)}
         />
         <input
           type="text"
           placeholder="Say something..."
           value={this.state.text}
-          onChange={this.handleTextChange}
+          onChange={this.handleTextChange.bind(this)}
         />
         <input type="submit" value="提交" />
       </form>

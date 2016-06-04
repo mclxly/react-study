@@ -29,6 +29,20 @@ export class CommentsDemo extends React.Component { // eslint-disable-line react
       }.bind(that)
     });
   }
+  handleCommentSubmit(comment) {
+    $.ajax({
+      url: this.url,
+      dataType: 'json',
+      type: 'POST',
+      data: comment,
+      success: function(data) {
+        // this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.url, status, err.toString());
+      }.bind(this)
+    });
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +67,7 @@ export class CommentsDemo extends React.Component { // eslint-disable-line react
       <div className={ styles.commentsDemo }>
         <h1>Comments</h1>
         <CommentList data={this.state.data} />
-        <CommentForm />
+        <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>
       </div>
     );
   }  
