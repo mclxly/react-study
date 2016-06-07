@@ -36,22 +36,16 @@ But wait... there's more!
 
 Now you're ready to rumble!
 
-## Documentation
+## 依赖库
 
-- [Intro](docs/general): What's included and why
-- [**Commands**](docs/general/commands.md): Getting the most out of this boilerplate
-- [Testing](docs/testing): How to work with the built-in test harness
-- [Styling](docs/css): How to work with the CSS tooling
-- [Your app](docs/js): Supercharging your app with Routing, Redux, simple
-  asynchronicity helpers, etc.
-
-## License
-
-This project is licensed under the MIT license, Copyright (c) 2016 Maximilian
-Stoiber. For more information see `LICENSE.md`.
-
-## Donate
-
-This project is a labor of love. I ([Max](https://twitter.com/mxstbr)) have
-spent a lot of time building and maintaining react-boilerplate, and if you're
-using it I'd be immensely grateful for [a donation](https://cash.me/$mxstbr).
+- [chalk](https://github.com/chalk/chalk): 控制台字符串添加色彩
+- [history](https://github.com/mjackson/history): Manage browser history with JavaScript
+- [immutable](https://github.com/facebook/immutable-js): Immutable Data Collections
+- [marked](https://github.com/chjj/marked): A markdown parser built for speed
+- [redux](https://github.com/reactjs/redux): Redux is a predictable state container for JavaScript apps.
+- [react-redux](https://www.npmjs.com/package/react-redux): Official React bindings for Redux. A view binding library.
+- [redux-immutable](https://github.com/gajus/redux-immutable): redux-immutable is used to create an equivalent function of Redux combineReducers that works with Immutable.js state.
+- [redux-saga](https://github.com/yelouafi/redux-saga): Saga middleware for Redux to handle Side Effects.
+ - [reselect](https://github.com/reactjs/reselect): Selectors for Redux.
+ - [sanitize.css](https://github.com/10up/sanitize.css): Render elements consistently. Follow best practices.
+ - [whatwg-fetch](https://github.com/github/fetch): A window.fetch polyfill.

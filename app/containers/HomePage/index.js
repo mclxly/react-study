@@ -4,6 +4,9 @@
  * This is the first thing users see of our App, at the '/' route
  */
 
+// colin
+import moment from 'moment';
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
@@ -32,6 +35,8 @@ import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
 
 import styles from './styles.scss';
+
+moment.locale('zh-CN');
 
 export class HomePage extends React.Component {
   shouldComponentUpdate = shouldPureComponentUpdate;
@@ -76,6 +81,7 @@ export class HomePage extends React.Component {
         <div>
           <section className={`${styles.textSection} ${styles.centered}`}>
             <H2>React.js 项目实践</H2>
+            <h6>{moment([2007, 0, 29]).fromNow()}</h6>
             <p>A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</p>
             <ul>
               <li>
