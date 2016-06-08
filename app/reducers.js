@@ -41,11 +41,15 @@ function routeReducer(state = routeInitialState, action) {
  * Creates the main reducer with the asynchronously loaded ones
  */
 import commentsDemoReducer from 'containers/CommentsDemo/reducer';
+import todoPageReducer from 'containers/TodoPage/reducer';
+import personContainerReducer from 'containers/PersonContainer/reducer';
 export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
     global: globalReducer,
     commentsDemo: commentsDemoReducer,
+    todoPage: todoPageReducer,
+    personContainer: personContainerReducer,
     ...asyncReducers,
   });
 }

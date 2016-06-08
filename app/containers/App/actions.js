@@ -19,11 +19,6 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
-
-  ADD_TODO,
-  REMOVE_TODO,
-  TOGGLE_TODO,
-  SET_VISIBILITY_FILTER
 } from './constants';
 
 /**
@@ -65,20 +60,4 @@ export function repoLoadingError(error) {
     type: LOAD_REPOS_ERROR,
     error,
   };
-}
-
-
-/*
-Todo Container: action creators
- */
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
-}
-
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
-}
-
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
 }

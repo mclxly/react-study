@@ -87,6 +87,9 @@ export class HomePage extends React.Component {
               <li>
                 <a href="/comments-demo">React 官网教程实践</a>
               </li>
+              <li>
+                <a href="/todo">Todo</a>
+              </li>
             </ul>            
           </section>
           <section className={styles.textSection}>

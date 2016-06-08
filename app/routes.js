@@ -55,6 +55,14 @@ export default function createRoutes(store) {
           .catch(errorLoading);
       },
     }, {
+      path: '/todo',
+      name: 'todo',
+      getComponent(nextState, cb) {
+        System.import('containers/TodoPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
