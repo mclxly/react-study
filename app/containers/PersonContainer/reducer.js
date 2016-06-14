@@ -4,24 +4,24 @@
  *
  */
 
-import { fromJS, Immutable } from 'immutable';
+import { fromJS, Record, List } from 'immutable';
 import {
   DEFAULT_ACTION,
   giveTreat,
 } from './constants';
 
 // -- Immutable Record Definitions --------------------------------- // 
-const Pet = Immutable.Record({ id: 0, name: '', treats: 0 });
-const Person = Immutable.Record({ name: '', pets: Immutable.List([]) });
+const Pet = Record({ id: 0, name: '', treats: 0 });
+const Person = Record({ name: '', pets: List([]) });
 
 // -- Input data --------------------------------------------------- //
-const pets = Immutable.fromJS({
+const pets = fromJS({
   '1': new Pet({ id: '1', name: 'Fido',  treats: 2 }),  
   '2': new Pet({ id: '2', name: 'Doggy', treats: 3 }),
   '3': new Pet({ id: '3', name: 'Jimmy', treats: 4 }),    
 });
 
-const people = Immutable.fromJS({
+const people = fromJS({
   'ck': new Person({ name: 'Chris', pets: ['1', '3'] }),
   'mk': new Person({ name: 'Miki',  pets: ['2']      }),
 });

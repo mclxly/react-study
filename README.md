@@ -11,7 +11,7 @@
   <dd>Bootstrap 3</dd>
 
   <dt>API test</dt>
-  <dd>json-server -p 4000 --watch server/faked_db.json</dd>
+  <dd>json-server -p 8081 -H 0.0.0.0 --watch server/faked_db.json</dd>
 </dl>
 
 But wait... there's more!
