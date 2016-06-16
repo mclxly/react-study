@@ -90,6 +90,9 @@ export class HomePage extends React.Component {
               <li>
                 <a href="/todo">Todo</a>
               </li>
+              <li>
+                <a href="/redux-form">redux-form</a>
+              </li>
             </ul>            
           </section>
           <section className={styles.textSection}>

@@ -3,9 +3,10 @@
  * If we were to do this in store.js, reducers wouldn't be hot reloadable.
  */
 
-import { fromJS } from 'immutable';
+import Immutable, { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
+import {reducer as formReducer} from 'redux-form';
 
 import globalReducer from 'containers/App/reducer';
 
@@ -43,13 +44,22 @@ function routeReducer(state = routeInitialState, action) {
 import commentsDemoReducer from 'containers/CommentsDemo/reducer';
 import todoPageReducer from 'containers/TodoPage/reducer';
 import personContainerReducer from 'containers/PersonContainer/reducer';
+import reduxFormPageReducer from 'containers/ReduxFormPage/reducer';
+
+const immutableize = reducer => (state, action) =>
+  fromJS(reducer(state ? state.toJS() : {}, action));
+
 export default function createReducer(asyncReducers) {
-  return combineReducers({
+  let t = combineReducers({
     route: routeReducer,
     global: globalReducer,
     commentsDemo: commentsDemoReducer,
     todoPage: todoPageReducer,
     personContainer: personContainerReducer,
+    form: immutableize(formReducer),  // <--- IMPORTANT PART
+    reduxFormPage: reduxFormPageReducer,
     ...asyncReducers,
   });
+  // console.log(t);
+  return t;
 }

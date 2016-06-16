@@ -30,6 +30,7 @@ export default function createRoutes(store) {
         const renderRoute = loadModule(cb);
 
         importModules.then(([reducer, sagas, component]) => {
+          console.log('importModules');
           injectReducer('home', reducer.default);
           injectSagas(sagas.default);
 
@@ -59,6 +60,14 @@ export default function createRoutes(store) {
       name: 'todo',
       getComponent(nextState, cb) {
         System.import('containers/TodoPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/redux-form',
+      name: 'redux-form',
+      getComponent(nextState, cb) {
+        System.import('containers/ReduxFormPage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

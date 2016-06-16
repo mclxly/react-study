@@ -11,5 +11,6 @@ import {
 export function defaultAction() {
   return {
     type: DEFAULT_ACTION,
+    commentsDemo: null
   };
 }

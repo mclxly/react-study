@@ -55,7 +55,8 @@ export class CommentsDemo extends React.Component { // eslint-disable-line react
       {id: 1, author: "Pete Hunt", text: "哈哈"},
       {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
     ];
-    this.url = "http://192.168.21.90:4000/comments";
+    //this.url = "http://192.168.21.90:4000/comments";
+    this.url = "http://192.168.1.52:8081/comments";
   }
   componentDidMount() {
     // let self = this;
