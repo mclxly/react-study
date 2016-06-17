@@ -30,6 +30,7 @@ const initialState = fromJS({
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_REPOS:
+      console.log('homeReducer');
       return state
         .set('loading', true)
         .set('error', false)

@@ -93,6 +93,9 @@ export class HomePage extends React.Component {
               <li>
                 <a href="/redux-form">redux-form</a>
               </li>
+              <li>
+                <a href="/login">登陆测试</a>
+              </li>
             </ul>            
           </section>
           <section className={styles.textSection}>

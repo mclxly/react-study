@@ -49,6 +49,7 @@ import reduxFormPageReducer from 'containers/ReduxFormPage/reducer';
 const immutableize = reducer => (state, action) =>
   fromJS(reducer(state ? state.toJS() : {}, action));
 
+import loginPageReducer from 'containers/LoginPage/reducer';
 export default function createReducer(asyncReducers) {
   let t = combineReducers({
     route: routeReducer,
@@ -58,6 +59,7 @@ export default function createReducer(asyncReducers) {
     personContainer: personContainerReducer,
     form: immutableize(formReducer),  // <--- IMPORTANT PART
     reduxFormPage: reduxFormPageReducer,
+    loginPage: loginPageReducer,
     ...asyncReducers,
   });
   // console.log(t);
