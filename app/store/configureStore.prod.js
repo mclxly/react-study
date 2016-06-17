@@ -3,23 +3,13 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { fromJS, Iterable } from 'immutable';
+import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
-import createLogger from 'redux-logger';
 import createReducer from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 const devtools = window.devToolsExtension || (() => noop => noop);
-
-const stateTransformer = (state) => {
-  if (Iterable.isIterable(state)) return state.toJS();
-  else return state;
-};
-
-const logger = createLogger({
-  stateTransformer,
-});
 
 export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares
@@ -27,7 +17,6 @@ export default function configureStore(initialState = {}, history) {
   // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     sagaMiddleware,
-    logger,
     routerMiddleware(history),
   ];
 
