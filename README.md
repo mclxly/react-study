@@ -18,6 +18,16 @@
   
 </dl>
 
+## Problems
+
+<dl>
+  <dt>Error: module.exports = require('./configureStore.prod')</dt>
+  <dd>module.exports = require('./configureStore.prod').default; <a href="http://stackoverflow.com/questions/33505992/babel-6-changes-how-it-exports-default">Babel 6 changes how it exports default</a></dd>
+
+  <dt>PostCSS 与 Sass 混用问题</dt>
+  <dd>PostCSS 原生解决方案更适合 React</dd>
+</dl>
+
 But wait... there's more!
 
   - *The best test setup:* Automatically guarantee code quality and non-breaking
