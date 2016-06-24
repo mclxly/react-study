@@ -24,6 +24,11 @@ export function* getGithubData() {
     const username = yield select(selectUsername());
     const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
+    // test login
+    let url = 'http://106.184.5.143/api/login?username=aaa&password=aaa';
+    let ret = yield call(request, url);
+    console.log(ret);
+
     // Use call from redux-saga for easier testing
     const repos = yield call(request, requestURL);
 
