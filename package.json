@@ -156,6 +156,7 @@
     "express": "^4.13.4",
     "fontfaceobserver": "^1.7.1",
     "history": "^2.1.0",
+    "html-to-react": "^1.0.0",
     "immutable": "^3.8.1",
     "jquery": "^2.2.4",
     "lodash": "^4.13.1",

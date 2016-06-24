@@ -82,21 +82,7 @@ export class HomePage extends React.Component {
           <section className={`${styles.textSection} ${styles.centered}`}>
             <H2>React.js 项目实践</H2>
             <h6>{moment([2007, 0, 29]).fromNow()}</h6>
-            <p>A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</p>
-            <ul>
-              <li>
-                <a href="/comments-demo">React 官网教程实践</a>
-              </li>
-              <li>
-                <a href="/todo">Todo</a>
-              </li>
-              <li>
-                <a href="/redux-form">redux-form</a>
-              </li>
-              <li>
-                <a href="/login">登陆测试</a>
-              </li>
-            </ul>            
+            <p>A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices</p>                      
           </section>
           <section className={styles.textSection}>
             <H2>Try me!</H2>
