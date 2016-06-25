@@ -24,9 +24,18 @@ export function* getGithubData() {
     const username = yield select(selectUsername());
     const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
-    // test login
+    // // test login,OK
+    // fetch('http://106.184.5.143/api/login?username=aaa&password=aaa', {method: 'POST'})
+    // .then(function(response) {
+    //   return response.json()
+    // }).then(function(json) {
+    //   console.log('parsed json', json)
+    // }).catch(function(ex) {
+    //   console.log('parsing failed', ex)
+    // });
+
     let url = 'http://106.184.5.143/api/login?username=aaa&password=aaa';
-    let ret = yield call(request, url);
+    let ret = yield call(request, url, {method: 'POST', credentials: 'include'});
     console.log(ret);
 
     // Use call from redux-saga for easier testing
