@@ -6,7 +6,7 @@
 import Immutable, { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import {reducer as formReducer} from 'redux-form';
+import { reducer as formReducer } from 'redux-form/immutable'
 
 import globalReducer from 'containers/App/reducer';
 
@@ -57,7 +57,7 @@ export default function createReducer(asyncReducers) {
     commentsDemo: commentsDemoReducer,
     todoPage: todoPageReducer,
     personContainer: personContainerReducer,
-    form: (state = Immutable.fromJS({}), action) => Immutable.fromJS(formReducer(state.toJS(), action)),
+    form: formReducer,
     reduxFormPage: reduxFormPageReducer,
     loginPage: loginPageReducer,
     ...asyncReducers,
