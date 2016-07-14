@@ -11,14 +11,18 @@ import HtmlToReact from 'html-to-react';
 import LoginForm from 'components/LoginForm';
 import selectLoginPage from './selectors';
 import styles from './styles.css';
+import SyncValidationForm from './SyncValidationForm';
+import { SubmissionError } from 'redux-form/immutable'
 
 const showResults = values =>
-  new Promise(resolve => {
+  new Promise((resolve,reject) => {
     setTimeout(() => {  // simulate server latency
       window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
-      resolve()
+      reject(new SubmissionError({ username: '用户名不存在', _error: '登录失败!' }));
+      //  throw new SubmissionError({ password: 'Wrong password', _error: 'Login failed!' })
+      // resolve()
     }, 500)
-  })
+  })//.catch(err => console.log(err))
 
 export class LoginPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -54,7 +58,8 @@ export class LoginPage extends React.Component { // eslint-disable-line react/pr
 
     return (
       <div className={ styles.loginPage }>
-        <LoginForm onSubmit={showResults}/>
+
+        <SyncValidationForm onSubmit={showResults}/>
       </div>
     );
   }
