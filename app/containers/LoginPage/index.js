@@ -8,8 +8,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import HtmlToReact from 'html-to-react';
 
+import LoginForm from 'components/LoginForm';
 import selectLoginPage from './selectors';
 import styles from './styles.css';
+
+const showResults = values =>
+  new Promise(resolve => {
+    setTimeout(() => {  // simulate server latency
+      window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
+      resolve()
+    }, 500)
+  })
 
 export class LoginPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -45,7 +54,7 @@ export class LoginPage extends React.Component { // eslint-disable-line react/pr
 
     return (
       <div className={ styles.loginPage }>
-        {reactComponent}
+        <LoginForm onSubmit={showResults}/>
       </div>
     );
   }
@@ -59,4 +68,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(null, mapDispatchToProps)(LoginPage);

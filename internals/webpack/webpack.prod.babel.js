@@ -11,6 +11,7 @@ const postcssFocus = require('postcss-focus');
 const postcssReporter = require('postcss-reporter');
 
 module.exports = require('./webpack.base.babel')({
+
   // In production, we skip all hot-reloading stuff
   entry: [
     path.join(process.cwd(), 'app/app.js'),
@@ -94,4 +95,6 @@ module.exports = require('./webpack.base.babel')({
       },
     }),
   ],
+
+  config: JSON.stringify(require('../../app/config_prod.json')),
 });

@@ -33,10 +33,12 @@ import H2 from 'components/H2';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
+import config from 'config';
 
 import styles from './styles.scss';
 
 moment.locale('zh-CN');
+console.log(config.apiRoot);
 
 export class HomePage extends React.Component {
   shouldComponentUpdate = shouldPureComponentUpdate;

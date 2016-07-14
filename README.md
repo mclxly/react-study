@@ -15,6 +15,9 @@
 
   <dt>process.env.PORT</dt>
   <dd>export PORT=1234</dd>
+
+  <dt>Adds the given favicon path to the output html.</dt>
+  <dd>https://github.com/ampedandwired/html-webpack-plugin#configuration</dd>
   
 </dl>
 

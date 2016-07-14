@@ -99,4 +99,8 @@ module.exports = (options) => ({
   sassLoader: {
     includePaths: [path.resolve(__dirname, '../../')],
   },
+
+  externals: {
+    config: options.config
+  },
 });

@@ -1,9 +1,9 @@
-import CommentsDemo from '../index';
+import LoginForm from '../index';
 
 import expect from 'expect';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-describe('<CommentsDemo />', () => {
+describe('<LoginForm />', () => {
 
 });

@@ -57,7 +57,7 @@ export default function createReducer(asyncReducers) {
     commentsDemo: commentsDemoReducer,
     todoPage: todoPageReducer,
     personContainer: personContainerReducer,
-    form: immutableize(formReducer),  // <--- IMPORTANT PART
+    form: (state = Immutable.fromJS({}), action) => Immutable.fromJS(formReducer(state.toJS(), action)),
     reduxFormPage: reduxFormPageReducer,
     loginPage: loginPageReducer,
     ...asyncReducers,
