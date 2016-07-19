@@ -10,12 +10,13 @@ import selectTodoPage from './selectors';
 import styles from './styles.css';
 
 import PersonContainer from 'containers/PersonContainer';
+import AddTodoForm from 'components/AddTodoForm';
 
 export class TodoPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className={ styles.todoPage }>
-      This is TodoPage container !
+        <AddTodoForm />
         <PersonContainer />
       </div>
     );
