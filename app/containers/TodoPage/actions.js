@@ -13,6 +13,8 @@ import {
   // VisibilityFilters,
 } from './constants';
 
+let nextTodoId = 0
+
 export function defaultAction() {
   return {
     type: DEFAULT_ACTION,
@@ -23,7 +25,7 @@ export function defaultAction() {
 Todo Container: action creators
  */
 export function addTodo(text) {
-  return { type: ADD_TODO, text }
+  return { type: ADD_TODO, id: nextTodoId++, text }
 }
 
 export function toggleTodo(index) {

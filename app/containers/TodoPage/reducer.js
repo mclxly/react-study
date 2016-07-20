@@ -4,7 +4,7 @@
  *
  */
 
-import { fromJS } from 'immutable';
+import Immutable, { fromJS } from 'immutable';
 import {
   DEFAULT_ACTION,
   ADD_TODO,
@@ -26,6 +26,7 @@ function todos(state = [], action) {
         ...state,
         {
           text: action.text,
+          id: action.id,
           completed: false
         }
       ]
@@ -53,6 +54,8 @@ function visibilityFilter(state = VisibilityFilters.SHOW_ALL, action) {
 }
 
 function todoPageReducer(state = initialState, action) {
+  console.log('todoPageReducer');
+  console.log(state.todos);
   return {
     visibilityFilter: visibilityFilter(state.visibilityFilter, action),
     todos: todos(state.todos, action)
