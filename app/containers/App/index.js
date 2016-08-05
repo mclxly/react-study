@@ -40,13 +40,13 @@ function App(props) {
         <Img className={styles.logo} src={Banner} alt="react-boilerplate - Logo" />
       </A>
       {props.children}
-      <Footer />
+      <Footer />      
     </div>
   );
 }
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: React.PropTypes.node,  
 };
 
 export default App;

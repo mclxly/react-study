@@ -23,6 +23,7 @@ export class ReduxFormPage extends React.Component { // eslint-disable-line reac
   render() {
     const {fields: {firstName, lastName, email}, handleSubmit} = this.props;
     console.log(this.props);
+
     return (
       <div className={ styles.reduxFormPage }>
         <form onSubmit={ handleSubmit(this.handleSubmit.bind(this)) }>
@@ -37,7 +38,7 @@ export class ReduxFormPage extends React.Component { // eslint-disable-line reac
           <div>
             <label>Email</label>
             <input type="email" placeholder="Email" {...email}/>
-          </div>
+          </div>          
           <button type="submit">Submit</button>
         </form>
       </div>

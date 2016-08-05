@@ -7,6 +7,7 @@ import Immutable, { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form/immutable'
+import {reducer as notifications} from 'react-notification-system-redux';
 
 import globalReducer from 'containers/App/reducer';
 
@@ -60,6 +61,7 @@ export default function createReducer(asyncReducers) {
     form: formReducer,
     reduxFormPage: reduxFormPageReducer,
     loginPage: loginPageReducer,
+    notifications: notifications,
     ...asyncReducers,
   });
   // console.log(t);

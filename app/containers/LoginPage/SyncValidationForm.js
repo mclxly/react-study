@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form/immutable'
+import Select from 'react-select';
 
 const validate = values => {
   console.log(values);
@@ -39,13 +40,45 @@ const renderField = field => (
   </div>
 )
 
+const renderSelectField = field => (
+  <div>
+    <label>Select</label>
+    <select className="selectpicker" name="ss" {...this.props}>
+      <option>Mustard</option>
+      <option>Ketchup</option>
+      <option>Relish</option>
+    </select>
+  </div>
+)
+
+function logChange(val) {
+  console.log("Selected: " + val);
+}
+
 const SyncValidationForm = (props) => {
   const { error, handleSubmit, pristine, reset, submitting } = props
+
+  let options = [
+    { value: 'one', label: 'One' },
+    { value: 'two', label: 'Two' }
+  ];
   return (
     <form onSubmit={handleSubmit}>
       <Field name="username" type="text" component={renderField} placeholder="Username"/>
       <Field name="email" type="email" component={renderField} placeholder="Email"/>
       <Field name="age" type="number" component={renderField} placeholder="Age"/>
+      <Field name="ss" component={renderSelectField} />
+      <div>
+        <label>Favorite Color</label>
+        <div>
+          <Field name="favoriteColor" component="select">
+            <option>ddd</option>
+            <option value="#ff0000">Red</option>
+            <option value="#00ff00">Green</option>
+            <option value="#0000ff">Blue</option>
+          </Field>
+        </div>
+      </div>
       {error && <strong>{error}</strong>}
       <div>
         <button type="submit" disabled={submitting}>Submit</button>

@@ -22,6 +22,7 @@ import {
 
 import {
   selectUsername,
+  selectNoti,
 } from './selectors';
 
 import { changeUsername } from './actions';
@@ -40,7 +41,27 @@ import styles from './styles.scss';
 moment.locale('zh-CN');
 console.log(config.apiRoot);
 
+import Notifications from 'react-notification-system-redux';
+
+const notificationOpts = {
+  // uid: 'once-please', // you can specify your own uid if required
+  title: 'Hey, it\'s good to see you!',
+  message: 'Now you can see how easy it is to use notifications in React!',
+  position: 'tr',
+  autoDismiss: 0,
+  action: {
+    label: 'Click me!!',
+    callback: () => alert('clicked!')
+  }
+};
+
 export class HomePage extends React.Component {
+  constructor() {
+    super();
+
+    this.createNotify = this.createNotify.bind(this);
+  }
+
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   /**
@@ -58,6 +79,12 @@ export class HomePage extends React.Component {
   openFeaturesPage = () => {
     this.openRoute('/features');
   };
+
+  createNotify() {
+    this.props.dispatch(
+      Notifications.success(notificationOpts)
+    );
+  }
 
   render() {
     let mainContent = null;
@@ -77,6 +104,20 @@ export class HomePage extends React.Component {
     } else if (this.props.repos !== false) {
       mainContent = (<List items={this.props.repos} component={RepoListItem} />);
     }
+
+    const {notifications} = this.props;
+    //Optional styling
+    const style = {
+      NotificationItem: { // Override the notification item
+        DefaultStyle: { // Applied to every notification, regardless of the notification level
+          margin: '10px 5px 2px 1px'
+        },
+
+        success: { // Applied only to the success notification item
+          color: 'red'
+        }
+      }
+    };
 
     return (
       <article>
@@ -104,7 +145,11 @@ export class HomePage extends React.Component {
             {mainContent}
           </section>
           <Button handleRoute={this.openFeaturesPage}>Features</Button>
+          <button onClick={this.createNotify}>
+            点击弹出通知
+          </button>
         </div>
+        <Notifications notifications={notifications} style={style} />
       </article>
     );
   }
@@ -124,6 +169,7 @@ HomePage.propTypes = {
   onSubmitForm: React.PropTypes.func,
   username: React.PropTypes.string,
   onChangeUsername: React.PropTypes.func,
+  notifications: React.PropTypes.array,
 };
 
 function mapDispatchToProps(dispatch) {
@@ -145,5 +191,6 @@ export default connect(createSelector(
   selectUsername(),
   selectLoading(),
   selectError(),
-  (repos, username, loading, error) => ({ repos, username, loading, error })
+  selectNoti(),
+  (repos, username, loading, error, notifications) => ({ repos, username, loading, error, notifications})
 ), mapDispatchToProps)(HomePage);
